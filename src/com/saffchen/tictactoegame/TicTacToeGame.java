@@ -7,7 +7,7 @@ public class TicTacToeGame {
     static ArrayList<Integer> cpuPositions = new ArrayList<>();
 
     public static void main(String[] args) {
-        char[][] gameBoard = {{' ', '|', ' ', '|', ' '}, //Создание игрового поля
+        char[][] gameBoard = {{' ', '|', ' ', '|', ' '},
                 {'-', '+', '-', '+', '-'},
                 {' ', '|', ' ', '|', ' '},
                 {'-', '+', '-', '+', '-'},
@@ -18,7 +18,7 @@ public class TicTacToeGame {
         while (true) {
             System.out.println("Enter your placement 1-9: ");
             int playerPosition = scanner.nextInt();
-            while (playerPositions.contains(playerPosition) || cpuPositions.contains(playerPosition)) { //Контроль занимаемой позиции игроком
+            while (playerPositions.contains(playerPosition) || cpuPositions.contains(playerPosition)) {
                 System.out.println("Position taken! Enter a correct position: ");
                 playerPosition = scanner.nextInt();
             }
@@ -32,7 +32,7 @@ public class TicTacToeGame {
 
             Random random = new Random(); //Рандомный ход компьюетором
             int cpuPosition = random.nextInt(9) + 1;
-            while (playerPositions.contains(cpuPosition) || cpuPositions.contains(cpuPosition)) { //Контроль занимаемой позиции компьюетором
+            while (playerPositions.contains(cpuPosition) || cpuPositions.contains(cpuPosition)) {
                 System.out.println("CPU adopt taken position!");
                 cpuPosition = random.nextInt(9) + 1;
             }
@@ -49,7 +49,7 @@ public class TicTacToeGame {
         }
     }
 
-    private static void printGameBoard(char[][] gameBoard) { //Отрисовка игрового поля
+    private static void printGameBoard(char[][] gameBoard) {
         for (char[] row : gameBoard) {
             for (char c : row) {
                 System.out.print(c);
@@ -58,7 +58,7 @@ public class TicTacToeGame {
         }
     }
 
-    private static void placePiece(char[][] gameBoard, int position, String user) { //Логика хода
+    private static void placePiece(char[][] gameBoard, int position, String user) {
         char symbol = ' ';
         if (user.equals("player")) {
             symbol = 'X';
@@ -81,7 +81,7 @@ public class TicTacToeGame {
         }
     }
 
-    private static String checkWinner() { //Проверка победителя
+    private static String checkWinner() {
         List<Integer> topRow = Arrays.asList(1, 2, 3);
         List<Integer> midRow = Arrays.asList(4, 5, 6);
         List<Integer> botRow = Arrays.asList(7, 8, 9);
