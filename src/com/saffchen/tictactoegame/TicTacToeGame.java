@@ -30,7 +30,7 @@ public class TicTacToeGame {
 
             placePiece(gameBoard, playerPosition, "player");
 
-            Random random = new Random(); //Рандомный ход компьюетором
+            Random random = new Random();
             int cpuPosition = random.nextInt(9) + 1;
             while (playerPositions.contains(cpuPosition) || cpuPositions.contains(cpuPosition)) {
                 System.out.println("CPU adopt taken position!");
